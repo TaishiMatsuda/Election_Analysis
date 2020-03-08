@@ -6,20 +6,20 @@
 ## 04. Calculate the total number of votes each candidate won
 ## 05. Find out the winner of the election based on popular vote
 
+# Add our dependencies.
 import csv
 import os
-
-# Assign a variable for the file to load and the path.
+# Assigning variable to load & save file (Make sure you are at folder Election_Analysis)
 file_to_load = 'Resources\election_results.csv'
+file_to_save = 'Analysis\election_analysis.txt'
 
 # Open the election results and read the file
 with open(file_to_load,"r") as election_data:
-    # To Do: Perform Analysis
-    print(election_data)
+    file_reader = csv.reader(election_data)
+    headers = next(file_reader)
+    print(headers)
 
-
-# Create a filename variable to a direct or indirect path to the file
-file_to_save = 'Analysis\election_analysis.txt'
+# Save
 with open(file_to_save,"w") as txt_file:
     # Write
     txt_file.write("Counties in the Election\n------------------------\nArapahoe\nDenver\nJefferson")
